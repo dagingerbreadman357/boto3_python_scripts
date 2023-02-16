@@ -23,19 +23,21 @@ def create_apache_ec2(client, MaxCount=1, MinCount=1, KeyName=None, SecurityGrou
         if(KeyName==None):
             client.run_instances(MaxCount=MaxCount,
                          MinCount=MinCount,
-                         ImageId="ami-0f1a5f5ada0e7da53",        # us-west-2 ami as of 2/16/23
+                         ImageId="ami-0f1a5f5ada0e7da53",                         # us-west-2 ami as of 2/16/23
                          InstanceType="t2.micro",
-                         SecurityGroups=SecurityGroups, # name of the security group
-                         UserData=UserData)
+#                         SecurityGroups=SecurityGroups,                          # name of the security group
+#                         UserData=UserData
+)
         
         else:
             client.run_instances(MaxCount=MaxCount,
                              MinCount=MinCount,
-                             ImageId="ami-0f1a5f5ada0e7da53",     # us-west-2 ami as of 2/16/23
+                             ImageId="ami-0f1a5f5ada0e7da53",                     # us-west-2 ami as of 2/16/23
                              InstanceType="t2.micro",
-                             KeyName=KeyName,
-                             SecurityGroups=SecurityGroups, # name of the security group
-                             UserData=UserData)
+#                             KeyName=KeyName,
+#                             SecurityGroups=SecurityGroups,                      # name of the security group
+#                             UserData=UserData
+)
         print("Started")
     except Exception as e:
         print("Failed", e)
