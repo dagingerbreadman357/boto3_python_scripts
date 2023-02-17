@@ -5,21 +5,29 @@ dynamodb = boto3.client('dynamodb')
 response = dynamodb.create_table(
     AttributeDefinitions=[
         {
-            'AttributeName': 'ID',
+            'AttributeName': 'Title',
             'AttributeType': 'S',
+        },
+        {
+            'AttributeName': 'Year',
+            'AttributeType': 'N',
         }
     ],
     KeySchema=[
         {
-            'AttributeName': 'ID',
+            'AttributeName': 'Title',
             'KeyType': 'HASH',
+        },
+        {
+            'AttributeName': 'Year',
+            'KeyType': 'RANGE',
         }
     ],
     ProvisionedThroughput={
         'ReadCapacityUnits': 1,
         'WriteCapacityUnits': 1,
     },
-    TableName='Music',
+    TableName='Favorite_Movies',
 )
 
 print(response)
