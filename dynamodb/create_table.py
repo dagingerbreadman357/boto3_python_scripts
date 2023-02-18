@@ -2,7 +2,7 @@ import boto3
 
 dynamodb = boto3.client('dynamodb')
 
-response = dynamodb.create_table(
+response = dynamodb.create_table(                # create dynamodb table w/ .create_table method. creating response variable is not necessary
     AttributeDefinitions=[
         {
             'AttributeName': 'Title',
@@ -30,4 +30,6 @@ response = dynamodb.create_table(
     TableName='Favorite_Movies',
 )
 
-print(response)
+print(response)                                     # prints variable to screen which shows output of table in a list (optional)
+
+#print("Dyanmodb table created")                    # prints visual confirmation if code results in 0 (optional) 
