@@ -6,4 +6,4 @@ queue = sqs.create_queue(
     QueueName='KingSQS_Time'        # creates a queue and names it KingSQS_Time
 )
 
-print('Queue created')   # print url of queue
+print('Queue created')
